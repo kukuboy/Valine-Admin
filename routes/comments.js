@@ -94,11 +94,11 @@ router.get('/mark-spam', function (req, res, next) {
 });
 
 const sort = function(val){
-    console.log(val)
     for(let i of val){
-        console.log(val,i)
         i.set('ArticleTitle', i.get('url').split('/')[i.get('url').length-2]);
+        i.save()
     }
+    console.log(val)
     return val
 }
 
