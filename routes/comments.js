@@ -95,7 +95,7 @@ router.get('/mark-spam', function (req, res, next) {
 
 const sort = function(val){
     for(let i of val){
-        debugger
+        console.log(val,i)
         i.ArticleTitle=i.url.split('/')[i.url.length-2]
     }
     return i
