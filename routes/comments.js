@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
         query.find().then(function (results) {
             res.render('comments', {
                 title: process.env.SITE_NAME + '上的评论',
-                comment_list: results
+                comment_list: sort(results)
             });
         }, function (err) {
             if (err.code === 101) {
@@ -93,4 +93,12 @@ router.get('/mark-spam', function (req, res, next) {
     }
 });
 
+const sort = function(val){
+    for(let i of val){
+        i.ArticleTitle=i.url.split('/')[i.url.length-2]
+    }
+    return i
+}
+
 module.exports = router;
+
