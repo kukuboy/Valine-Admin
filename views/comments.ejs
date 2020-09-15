@@ -17,7 +17,9 @@
         <% for(var i = 0; i < comment_list.length; i++) { %>
         <li class="vcard">
             <div class="vhead">
-                <a class="blue" href="<%= process.env.SITE_URL+comment_list[i].get('url')+'#' + comment_list[i].get('objectId') %>" target="_blank" rel="nofollow"><%= comment_list[i].get('ArticleTitle') %></a>
+                <h2>
+                    <a class="blue" href="<%= process.env.SITE_URL+comment_list[i].get('url')+'#' + comment_list[i].get('objectId') %>" target="_blank" rel="nofollow">文章标题：<%= comment_list[i].get('ArticleTitle') %></a>
+                </h2>
             </div>
             <div class="vhead">
                 <% if(comment_list[i].get('link')) { %>
